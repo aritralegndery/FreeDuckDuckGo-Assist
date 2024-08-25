@@ -21,9 +21,7 @@ app.add_middleware(
 @app.get("/")
 async def root():
     return {
-        "status": 200,
-        "how_to_use": "https://github.com/jokosantosi/FreeDuckDuckGo-Assist",
-        "example": "https://github.com/jokosantosi/FreeDuckDuckGo-Assist/blob/main/example.py"
+        "status": 200
     }
     
 @app.get("/api/get-token")
