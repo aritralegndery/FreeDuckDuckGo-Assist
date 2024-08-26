@@ -2,7 +2,7 @@ import aiohttp
 import asyncio
 import json
 from flask import Flask, request, jsonify
-#
+
 # Initialize the Flask app
 app = Flask(__name__)
 
@@ -101,6 +101,11 @@ def handle_chat():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
+# Route to return a simple HTML message
+@app.route("/", methods=["GET"])
+def hello_world():
+    return "<!doctype html><html><body><h1>Hello, World!</h1></body></html>", 200
+
 if __name__ == "__main__":
     # Run Flask app
-    app.run(host="0.0.0.0")
+    app.run(host="0.0.0.0", port=5000)
